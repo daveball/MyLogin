@@ -15,6 +15,6 @@ namespace MyLogin
         }
 
         public DbSet<Users> Users { get; set; }
-        public DbSet<List> List { get; set; }
+        public DbSet<Lists> Lists { get; set; }
     }
 }

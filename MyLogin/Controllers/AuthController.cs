@@ -103,6 +103,13 @@ namespace MyLogin.Controllers
             }
             return View();
         }
+
+        [HttpGet]
+        public ActionResult Index()
+        {
+            var db = new MainDbContext();
+            return View(db.Lists.Where(x => x.Public == "YES").ToList());
+        }
         /*
         private string  GetRedirectUrl( string returnUrl)
         {

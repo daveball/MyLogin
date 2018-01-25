@@ -7,7 +7,7 @@ using System.Web;
 
 namespace MyLogin.Models
 {
-    public class List
+    public class Lists
     {
         [Key]
         public int Id { get; set; }

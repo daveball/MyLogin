@@ -1,18 +1,18 @@
-﻿@model MyLogin.Models.List 
+﻿@model IEnumerable <MyLogin.Models.Lists> 
 @{
     ViewBag.Title = "Index";
     var username = User.Identity.Name;
 }
 
-<h2>@username's List</h2>
+<h2>@username's Lists</h2>
 @using (Html.BeginForm())
 {
     <span> Enter new item: </span>
-    @Html.TextBoxFor(u => u.Details) <br/>
-    <span> Public post? </span> < input type = "checkbox" name = "check_public" /> <br />
+   <input type="text" name="new_item"/>
+    <span> Public post? </span> <input type = "checkbox" name = "check_public" /> <br />
     <input type = "submit" value = "Add Item" />
 }
-&amp;lt;br /&amp;gt;
+<br />
 
 <table class="table table-bordered table-condensed">
     <thead>
@@ -27,14 +27,18 @@
         </tr>
     </thead>
     <tbody>
+    @foreach (var item in Model)
+    {
+     
         <tr>
-            <td style="text-align: center;"></td>
-            <td style="text-align: center;"></td>
-            <td style="text-align: center;"></td>
-            <td style="text-align: center;"></td>
+            <td style="text-align: center;">@Html.DisplayFor(modelItem =>  item.Id)</td>
+            <td style="text-align: center;">;@Html.DisplayFor(modelItem => item.Details)</td>
+            <td style="text-align: center;">@Html.DisplayFor(modelItem => item.Time_Posted)</td>
+            <td style="text-align: center;">@Html.DisplayFor(modelItem => item.Time_Edited)</td>
             <td style="text-align: center;"><a href="@Url.Action("Edit", "Home")">Edit</a></td>
             <td style="text-align: center;"><a href="@Url.Action("Delete", "Home")">Delete</a></td>
-            <td style="text-align: center;"></td>
-            </tr>
-            </tbody>
+            <td style="text-align: center;">@Html.DisplayFor(modelItem =>item.Public)</td>
+        </tr>
+    }
+    </tbody>
             </table>

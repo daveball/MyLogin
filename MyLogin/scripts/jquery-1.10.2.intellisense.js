@@ -61,7 +61,7 @@ intellisense.annotate(jQuery, {
   'Callbacks': function() {
     /// <signature>
     ///   <summary>A multi-purpose callbacks list object that provides a powerful way to manage callback lists.</summary>
-    ///   <param name="flags" type="String">An optional list of space-separated flags that change how the callback list behaves.</param>
+    ///   <param name="flags" type="String">An optional list of space-separated flags that change how the callback Lists behaves.</param>
     ///   <returns type="Callbacks" />
     /// </signature>
   },
@@ -453,7 +453,7 @@ intellisense.annotate(_object, {
   'fire': function() {
     /// <signature>
     ///   <summary>Call all of the callbacks with the given arguments</summary>
-    ///   <param name="arguments" type="Anything">The argument or list of arguments to pass back to the callback list.</param>
+    ///   <param name="arguments" type="Anything">The argument or list of arguments to pass back to the callback Lists.</param>
     ///   <returns type="Callbacks" />
     /// </signature>
   },
